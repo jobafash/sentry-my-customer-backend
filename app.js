@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 
 require('dotenv').config()
 require('./routes/transactions.js');
+require('./routes/stores.js');
 var url = process.env.MONGOLAB_URI;
 const app = express();
 
@@ -17,6 +18,9 @@ const phone_call_api = require('./controllers/phone_call_api');
 const messagingAPI = require("./routes/messaging");
 
 require('./routes/transactions.js')(app);
+
+
+require('./routes/stores.js')(app);
 const mongoose = require('mongoose');
 app.use(cors());
 
